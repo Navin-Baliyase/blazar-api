@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	root 'welcomes#index'
+	resources :graphs
 	devise_for :users,
 	path: '',
 	path_names: {
