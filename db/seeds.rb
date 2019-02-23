@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+200.times do
+	Graph.create!(
+		name: Faker::Name.name,
+		PI: Faker::Number.between(1, 25)
+		)
+end
