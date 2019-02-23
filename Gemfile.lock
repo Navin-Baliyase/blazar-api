@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 743199507072dd5520523066f1c6ffaba3584886
+  branch: master
+  specs:
+    faker (1.9.3)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -157,6 +165,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   devise-jwt
+  faker!
   puma (~> 3.11)
   rails (~> 5.2.2)
   sqlite3
