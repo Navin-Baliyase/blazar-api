@@ -2,28 +2,27 @@ class GraphsController < ApplicationController
 	skip_before_action :authenticate_user!
 
 	def index
-=begin
+
     #render json: Graph.all
     @graphs = Graph.all
     min = Graph.minimum(:PI)
     max = Graph.maximum(:PI)
     average = Graph.average(:PI)
     interval = (max-min+1)/@graphs.count
-    #current_value = min
-    #[[6,7.8],[7.8,]]
-    @graph = Graph.where('PI BETWEEN ? AND ?', 6, 7.8)
+    @graph = Graph.where('PI BETWEEN ? AND ?', min, max)
     render json: {
         x_axis: @graph.pluck(:name),
         y_axis: @graph.pluck(:PI),
-        min: min,
-        max: max,
-        interval: interval,
-        average: average
+        #min: min,
+        #max: max,
+        #interval: interval,
+        #average: average
         #value: @graph
     }.to_json
-=end
 
-    @graphs = Graph.all
+
+=begin
+@graphs = Graph.all
     min = Graph.minimum(:PI)
     max = Graph.maximum(:PI)
     name = Graph.pluck(:PI).sort
@@ -48,6 +47,7 @@ class GraphsController < ApplicationController
         #interval: interval,
         #value: @graph.pluck(:PI),
     }.to_json
+=end
 
 
   end
